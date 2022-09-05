@@ -1,0 +1,12 @@
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+[user]
+	name = Victor Lambret
+	email = lambret.victor@gmail.com
+[push]
+	default = current
+[color]
+	ui = auto
