@@ -1,0 +1,5 @@
+# Ignore everything by default
+*
+
+# Then add manually what is needed
+!.gitignore
