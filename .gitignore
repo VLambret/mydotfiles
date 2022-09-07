@@ -6,3 +6,6 @@
 # Git
 !.gitconfig
 !.gitignore_global
+
+# Bash
+!.bashrc
