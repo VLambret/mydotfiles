@@ -19,31 +19,43 @@ function workarround_usb_pen()
 
 function configure_remote_pad()
 {
-	xsetwacom set "$PAD" StripLeftDown "key minus"  # zoom out
-	xsetwacom set "$PAD" StripLeftUp "key shift plus"  # zoom in
-	xsetwacom set "$PAD" Button 1 "key r"  # rectangular selections
-	xsetwacom set "$PAD" Button 2 "key ctrl shift a"  # select none
-	xsetwacom set "$PAD" Button 3 "key p"  # paintbrush
-	xsetwacom set "$PAD" Button 4 "key tab"  # toggle docks
-	xsetwacom set "$PAD" AbsWheelDown "key shift plus"
-	xsetwacom set "$PAD" AbsWheelUp "key minus"
-	xsetwacom set "$PAD" Button 5 "key shift control left"  # prev/next brush (must be mapped in GIMP)
-	xsetwacom set "$PAD" Button 6 "key shift control right"
-	xsetwacom set "$PAD" Button 7 "key ctrl shift e"  #  fit Image in window
-	xsetwacom set "$PAD" Button 8 "key F11"  # fullscreen
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Touch on
 
-	xsetwacom set "$PAD" StripRightDown "key alt down"  # brush radius (must be mapped in GIMP)
-	xsetwacom set "$PAD" StripRightUp "key alt up"
-	xsetwacom set "$PAD" Button 9 "key ctrl"
-	xsetwacom set "$PAD" Button 10 "key alt"
-	xsetwacom set "$PAD" Button 11 "key shift"
-	xsetwacom set "$PAD" Button 12 "key tab"
-	xsetwacom set "$PAD" AbsWheelDown "key alt up"  # Increase brush radius (must be mapped in GIMP)
-	xsetwacom set "$PAD" AbsWheelUp "key alt down"  # Decrease brush radius (must be mapped in GIMP)
-	xsetwacom set "$PAD" Button 13 "key apostrophe"
-	xsetwacom set "$PAD" Button 14 "key backspace"
-	xsetwacom set "$PAD" Button 15 "key backslash"
-	xsetwacom set "$PAD" Button 16 "key ctrl z"  # Undo in Gimp
+	# settings for krita (with some extra key configuration there)
+
+	# zoom (ctrl +/-) (not in diagram)
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 12 "key ctrl plus"
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 15 "key ctrl minus"
+
+	# rotation over touch wheel (ctrl ö/ä)
+	xsetwacom --set "Wacom Express Key Remote Pad pad" AbsWheelUp "key ctrl 0xd6"
+	xsetwacom --set "Wacom Express Key Remote Pad pad" AbsWheelDown "key ctrl 0xe4"
+
+	# wheel button left/right for undo/redo
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 2 "key ctrl z"
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 9 "key ctrl shift z"
+
+	# Mode resets rotation and tool to brush and zoom (no modes yet)
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 1 "key 5 b 1"
+
+	# wheel down: reset zoom only
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 10 "key 1"
+
+	# 1st row: Brush size ö/ä
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 11 "key +0xd6"
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 13 "key +0xe4"
+
+	# 2nd row: opacity
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 14 "key +i"
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 16 "key +o"
+
+	# 3rd row: color brightness 
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 17 "key +k"
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 19 "key +l"
+
+	# bottom buttons: ctrl + shift
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 21 "key +ctrl"
+	xsetwacom --set "Wacom Express Key Remote Pad pad" Button 22 "key +shift"
 }
 
 workarround_usb_pen
