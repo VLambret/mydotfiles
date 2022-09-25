@@ -9,3 +9,7 @@
 
 # Bash
 !.bashrc
+
+# bin folder
+!/bin
+!/bin/*
