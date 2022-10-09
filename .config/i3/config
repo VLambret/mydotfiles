@@ -167,3 +167,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+exec_always --no-startup-id ~/.screenlayout/HP27_Samsung24_Cintiq27.sh
+exec_always xset s off
+exec_always xset -dpms
