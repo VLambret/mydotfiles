@@ -18,3 +18,10 @@
 !.config
 !.config/i3
 !.config/i3/config
+
+# NVIM
+!.config/nvim
+!.config/nvim/syntax
+!.config/nvim/syntax/*
+!.config/nvim/ftdetect
+!.config/nvim/ftdetect/*
